@@ -4,20 +4,15 @@ using Signal.App.Domain.Entities;
 
 namespace Signal.App.Domain.EntityConfig;
 
-public class ChatUserConfig : IEntityTypeConfiguration<ChatUser>
+public class ChatConfig : IEntityTypeConfiguration<Chat>
 {
-    public void Configure(EntityTypeBuilder<ChatUser> builder)
+    public void Configure(EntityTypeBuilder<Chat> builder)
     {
         builder.HasKey(c => c.Id);
 
-        builder.HasOne(c => c.User)
-            .WithMany(c => c.ChatUsers)
-            .HasForeignKey(c => c.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
-
-        builder.HasOne(c => c.Chat)
-            .WithMany(c => c.ChatUsers)
+        builder.HasMany(c => c.ChatUsers)
+            .WithOne(c => c.Chat)
             .HasForeignKey(c => c.ChatId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
