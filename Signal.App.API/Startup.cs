@@ -3,6 +3,7 @@ using Shared.Extensions.ConfigureApp;
 using Shared.Extensions.ConfigureServices;
 using Signal.App.Application;
 using Signal.App.Application.DataAccess;
+using Signal.App.Application.Hubs;
 using Signal.App.Infrastructure.DataAccess;
 
 namespace Signal.App.API;
@@ -22,7 +23,16 @@ public class Startup
         services.Configure<string>(Configuration);
         services.AddSharedServices<AssemblyEntryPoint, DataContext, IUnitOfWork>(JwtLogin.FromConfiguration(Configuration), connectionString, serviceName);
         
+        services.AddSignalR();
+
         //services.AddMessageBusConnection(c => c.ApplyConfiguration(Configuration.GetSection("RabbitMQ")));
     }
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env) => app.ConfigureApplication(Configuration);
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.ConfigureApplication(Configuration);
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapHub<MessageHub>("/messages");
+        });
+    }
 }
