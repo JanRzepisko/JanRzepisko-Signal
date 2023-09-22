@@ -2,7 +2,7 @@ using Shared.BaseModels.BaseEntities;
 
 namespace Signal.App.Domain.Entities;
 
-public class Messages : Entity
+public class Message : Entity
 {
     public Guid SenderId { get; set; }
     public User Sender { get; set; }
