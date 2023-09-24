@@ -17,7 +17,7 @@ public class JwtAuth : IJwtAuth
         _configuration = configuration;
     }
 
-    public Task<GeneratedToken> GenerateJwt(Guid id, string email)
+    public Task<GeneratedToken> GenerateJwt(Guid id, string email, string name)
     {
         var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]!);
 
@@ -27,6 +27,7 @@ public class JwtAuth : IJwtAuth
             {
                 new Claim("Id", id.ToString()),
                 new Claim("Email", email),
+                new Claim("Name", name),
                 new Claim(ClaimTypes.Role, "user")
             }),
             Expires = DateTime.UtcNow.AddMinutes(30),

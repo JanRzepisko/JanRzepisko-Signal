@@ -26,10 +26,14 @@ public static class CreateChat
             if (!await _unitOfWork.Users.ExistsAsync(_userProvider.Id, cancellationToken))
                 throw new Exception("User not found");
             
+            Guid chatId = Guid.NewGuid();
+            
             var chat = new Domain.Entities.Chat
             {
                 ChatName = request.chatName,
-                PhotoPath = ""
+                PhotoPath = "",
+                Id = chatId,
+                ChatUsers = new List<ChatUser>(),
             };
             
             request.users.Add(_userProvider.Id);
@@ -41,11 +45,12 @@ public static class CreateChat
                     continue;
                 chat.ChatUsers.Add(new ChatUser
                 {
-                    Chat = chat,
+                    ChatId = chatId,
                     UserId = userId
                 });                
             }
-            
+
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
 

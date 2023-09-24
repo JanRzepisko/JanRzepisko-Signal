@@ -4,7 +4,9 @@ using Shared.Extensions.ConfigureServices;
 using Signal.App.Application;
 using Signal.App.Application.DataAccess;
 using Signal.App.Application.Hubs;
+using Signal.App.Application.Services;
 using Signal.App.Infrastructure.DataAccess;
+using Signal.App.Infrastructure.Services;
 
 namespace Signal.App.API;
 
@@ -22,6 +24,8 @@ public class Startup
         //Configure Service
         services.Configure<string>(Configuration);
         services.AddSharedServices<AssemblyEntryPoint, DataContext, IUnitOfWork>(JwtLogin.FromConfiguration(Configuration), connectionString, serviceName);
+
+        services.AddTransient<IJwtAuth, JwtAuth>();
         
         services.AddSignalR();
 

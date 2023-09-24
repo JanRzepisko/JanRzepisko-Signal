@@ -8,8 +8,8 @@ public interface IUnitOfWork
 {
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     IUserRepository Users { get; }
-    IBaseRepository<Chat> Chats { get; }
+    IChatRepository Chats { get; }
     IBaseRepository<Message> Messages { get; }
-    IBaseRepository<ChatUser> ChatUsers { get; }
+    IChatUserRepository ChatUsers { get; }
     
 }
