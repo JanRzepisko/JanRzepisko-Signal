@@ -22,7 +22,7 @@ namespace Signal.App.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.User", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

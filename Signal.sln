@@ -2,13 +2,15 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{AA9A6301-2FFF-4B69-A2AF-29A7E51CEABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signal.App.API", "Signal.App.API\Signal.App.API.csproj", "{2A601B09-D5CC-490C-8E1F-335DFAF3409B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.API", "MultiCultiChat.App.API\MultiCultiChat.App.API.csproj", "{2A601B09-D5CC-490C-8E1F-335DFAF3409B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signal.App.Application", "Signal.App.Application\Signal.App.Application.csproj", "{77ADB1B8-B8EA-4876-B310-69A790721A51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.Application", "MultiCultiChat.App.Application\MultiCultiChat.App.Application.csproj", "{77ADB1B8-B8EA-4876-B310-69A790721A51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signal.App.Infrastructure", "Signal.App.Infrastructure\Signal.App.Infrastructure.csproj", "{1C1E38B3-3318-40F5-8245-E97F80EB73A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.Domain", "MultiCultiChat.App.Domain\MultiCultiChat.App.Domain.csproj", "{7C56D15E-DEE8-4926-81B2-B016A9906B08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signal.App.Domain", "Signal.App.Domain\Signal.App.Domain.csproj", "{7C56D15E-DEE8-4926-81B2-B016A9906B08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.Infrastructure", "MultiCultiChat.App.Infrastructure\MultiCultiChat.App.Infrastructure.csproj", "{BE372B34-D2DE-495C-B91D-DFA5753FAC60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MultiCultiChat.App", "MultiCultiChat.App", "{1B42915D-B873-4F9C-A63C-10E8773E11CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,13 +30,19 @@ Global
 		{77ADB1B8-B8EA-4876-B310-69A790721A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77ADB1B8-B8EA-4876-B310-69A790721A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77ADB1B8-B8EA-4876-B310-69A790721A51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C1E38B3-3318-40F5-8245-E97F80EB73A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C1E38B3-3318-40F5-8245-E97F80EB73A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C1E38B3-3318-40F5-8245-E97F80EB73A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C1E38B3-3318-40F5-8245-E97F80EB73A7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7C56D15E-DEE8-4926-81B2-B016A9906B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7C56D15E-DEE8-4926-81B2-B016A9906B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C56D15E-DEE8-4926-81B2-B016A9906B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C56D15E-DEE8-4926-81B2-B016A9906B08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE372B34-D2DE-495C-B91D-DFA5753FAC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE372B34-D2DE-495C-B91D-DFA5753FAC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE372B34-D2DE-495C-B91D-DFA5753FAC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE372B34-D2DE-495C-B91D-DFA5753FAC60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A601B09-D5CC-490C-8E1F-335DFAF3409B} = {1B42915D-B873-4F9C-A63C-10E8773E11CF}
+		{77ADB1B8-B8EA-4876-B310-69A790721A51} = {1B42915D-B873-4F9C-A63C-10E8773E11CF}
+		{7C56D15E-DEE8-4926-81B2-B016A9906B08} = {1B42915D-B873-4F9C-A63C-10E8773E11CF}
+		{BE372B34-D2DE-495C-B91D-DFA5753FAC60} = {1B42915D-B873-4F9C-A63C-10E8773E11CF}
 	EndGlobalSection
 EndGlobal

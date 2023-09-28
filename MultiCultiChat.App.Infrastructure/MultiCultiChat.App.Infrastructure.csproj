@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Shared\Shared.csproj" />
-      <ProjectReference Include="..\Signal.App.Application\Signal.App.Application.csproj" />
+      <ProjectReference Include="..\MultiCultiChat.App.Application\MultiCultiChat.App.Application.csproj" />
     </ItemGroup>
 
     

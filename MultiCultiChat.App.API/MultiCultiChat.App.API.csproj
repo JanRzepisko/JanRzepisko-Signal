@@ -5,10 +5,12 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <RootNamespace>Signal.App.API</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Signal.App.Application\Signal.App.Application.csproj" />
+        <ProjectReference Include="..\MultiCultiChat.App.Application\MultiCultiChat.App.Application.csproj" />
+        <ProjectReference Include="..\MultiCultiChat.App.Infrastructure\MultiCultiChat.App.Infrastructure.csproj" />
         <ProjectReference Include="..\Signal.App.Infrastructure\Signal.App.Infrastructure.csproj" />
     </ItemGroup>
 

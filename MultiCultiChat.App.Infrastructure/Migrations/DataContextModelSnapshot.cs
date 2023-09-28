@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Signal.App.Infrastructure.DataAccess;
 
@@ -11,18 +10,16 @@ using Signal.App.Infrastructure.DataAccess;
 namespace Signal.App.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230922193858_configs")]
-    partial class configs
+    partial class DataContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.Chat", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.Chat", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,10 +35,10 @@ namespace Signal.App.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Chat");
+                    b.ToTable("_chats");
                 });
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.ChatUser", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.ChatUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -62,10 +59,10 @@ namespace Signal.App.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ChatUser");
+                    b.ToTable("_chatUsers");
                 });
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.Message", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.Message", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -87,10 +84,10 @@ namespace Signal.App.Infrastructure.Migrations
 
                     b.HasIndex("SenderId");
 
-                    b.ToTable("Message");
+                    b.ToTable("_messages");
                 });
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.User", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -117,15 +114,15 @@ namespace Signal.App.Infrastructure.Migrations
                     b.ToTable("_users");
                 });
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.ChatUser", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.ChatUser", b =>
                 {
-                    b.HasOne("Signal.App.Domain.Entities.Chat", "Chat")
+                    b.HasOne("MultiCultiChat.App.Domain.Entities.Chat", "Chat")
                         .WithMany("ChatUsers")
                         .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Signal.App.Domain.Entities.User", "User")
+                    b.HasOne("MultiCultiChat.App.Domain.Entities.User", "User")
                         .WithMany("ChatUsers")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -136,15 +133,15 @@ namespace Signal.App.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.Message", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.Message", b =>
                 {
-                    b.HasOne("Signal.App.Domain.Entities.Chat", "Chat")
+                    b.HasOne("MultiCultiChat.App.Domain.Entities.Chat", "Chat")
                         .WithMany("Messages")
                         .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Signal.App.Domain.Entities.User", "Sender")
+                    b.HasOne("MultiCultiChat.App.Domain.Entities.User", "Sender")
                         .WithMany("Messages")
                         .HasForeignKey("SenderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -155,14 +152,14 @@ namespace Signal.App.Infrastructure.Migrations
                     b.Navigation("Sender");
                 });
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.Chat", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.Chat", b =>
                 {
                     b.Navigation("ChatUsers");
 
                     b.Navigation("Messages");
                 });
 
-            modelBuilder.Entity("Signal.App.Domain.Entities.User", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.User", b =>
                 {
                     b.Navigation("ChatUsers");
 
