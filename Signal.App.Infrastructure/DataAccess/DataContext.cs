@@ -26,6 +26,6 @@ public class DataContext : DbContext, IUnitOfWork
 
     public IUserRepository Users => new UserRepository(_users);
     public IChatRepository Chats => new ChatRepository(_chats);
-    public IBaseRepository<Message> Messages => new BaseRepository<Message>(_messages);
+    public IMessageRepository Messages => new MessagesRepository(_messages);
     public IChatUserRepository ChatUsers => new ChatUserRepository(_chatUsers);
 }

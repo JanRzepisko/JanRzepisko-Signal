@@ -9,7 +9,7 @@ public interface IUnitOfWork
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     IUserRepository Users { get; }
     IChatRepository Chats { get; }
-    IBaseRepository<Message> Messages { get; }
+    IMessageRepository Messages { get; }
     IChatUserRepository ChatUsers { get; }
     
 }

@@ -29,6 +29,7 @@ public static class Register
                 Email = request.Email,
                 Id = id,
                 Username = request.Username,
+                PhotoPath = "",
                 Password = BCrypt.Net.BCrypt.HashPassword(request.Password),
             };
 

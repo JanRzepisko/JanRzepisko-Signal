@@ -27,9 +27,9 @@ public static class GetMessages
             if (!await _unitOfWork.Users.ExistsAsync(_userProvider.Id, cancellationToken))
                 throw new Exception("User not found");
 
-            
-            
-            return null;
+            var messages = await _unitOfWork.Messages.GetMessagesByChatId(request.ChatId, request.Page, _pageSize);
+
+            return messages.Select(MessageDTO.FromEntity).ToList();
         }
 
         public sealed class Validator : AbstractValidator<Command>
