@@ -37,6 +37,16 @@ public class MessageHub : Hub
         
         await _unitOfWork.Messages.AddAsync(msg);
         await _unitOfWork.SaveChangesAsync();
-        await Clients.Groups(chatId.ToString()).SendAsync("Message", chatId, message);
+        await Clients.Groups(chatId.ToString()).SendAsync("Sent", chatId, message);
+    }
+    
+    [Authorize]
+    [HubMethodName("RemoveMessage")]
+    public async Task RemoveMessage(Guid messageId, Guid chatId)
+    {
+        _unitOfWork.Messages.RemoveById(messageId);
+        await _unitOfWork.SaveChangesAsync();
+        
+        await Clients.Groups(chatId.ToString()).SendAsync("Removed", messageId);
     }
 }
