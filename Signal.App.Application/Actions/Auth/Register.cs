@@ -7,7 +7,7 @@ namespace Signal.App.Application.Actions.Auth;
 
 public static class Register
 {
-    public sealed record Command(string  Name, string Surname, string Password, string Email) : IRequest<Unit>;
+    public sealed record Command(string Username, string Password, string Email) : IRequest<Unit>;
 
     public class Handler : IRequestHandler<Command, Unit>
     {
@@ -28,8 +28,7 @@ public static class Register
             {
                 Email = request.Email,
                 Id = id,
-                Name = request.Name,
-                Surname = request.Surname,
+                Username = request.Username,
                 Password = BCrypt.Net.BCrypt.HashPassword(request.Password),
             };
 
@@ -42,8 +41,7 @@ public static class Register
         {
             public Validator()
             {
-                RuleFor(c => c.Name).MinimumLength(3).MaximumLength(20);
-                RuleFor(c => c.Surname).MinimumLength(3).MaximumLength(20);
+                RuleFor(c => c.Username).MinimumLength(3).MaximumLength(20);
                 RuleFor(c => c.Email).EmailAddress();
                 RuleFor(c => c.Password)
                     .MinimumLength(8)

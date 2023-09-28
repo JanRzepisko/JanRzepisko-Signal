@@ -28,7 +28,7 @@ public static class RefreshToken
         {
             var user = await _unitOfWork.Users.GetByIdAsync(_userProvider.Id, cancellationToken);
             if (user is null) throw new EntityNotFoundException("User not found");
-            return await _jwtAuth.GenerateJwt(user.Id, user.Email, user.Name);
+            return await _jwtAuth.GenerateJwt(user.Id, user.Email, user.Username);
         }
     }
 }

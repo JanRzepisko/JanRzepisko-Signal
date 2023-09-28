@@ -8,7 +8,7 @@ namespace Signal.App.Application.Actions.Auth;
 
 public static class Update
 {
-    public sealed record Command(string? Name, string? Surname, string? Email): IRequest<Unit>;
+    public sealed record Command(string? Username, string? Email): IRequest<Unit>;
 
     public class Handler : IRequestHandler<Command, Unit>
     {
@@ -23,12 +23,11 @@ public static class Update
 
         public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
         {
-            var priest = await _unitOfWork.Users.GetByIdAsync(_userProvider.Id, cancellationToken);
+            var user = await _unitOfWork.Users.GetByIdAsync(_userProvider.Id, cancellationToken);
 
-            if (priest is null) throw new EntityNotFoundException($"user with id {_userProvider.Id} not found");
-            priest.Name = request.Name ?? priest.Name;
-            priest.Surname = request.Surname ?? priest.Surname;
-            priest.Email = request.Email ?? priest.Email;
+            if (user is null) throw new EntityNotFoundException($"user with id {_userProvider.Id} not found");
+            user.Username = request.Username ?? user.Username;
+            user.Email = request.Email ?? user.Email;
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;

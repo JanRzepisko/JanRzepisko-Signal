@@ -27,7 +27,7 @@ public static class Login
             if (user is null) throw new EntityNotFoundException("User not found");
             if (!BCrypt.Net.BCrypt.Verify(request.Password, user.Password)) throw new BadPassword("Bad password");
             
-            return await _jwtAuth.GenerateJwt(user.Id, user.Email, user.Name);
+            return await _jwtAuth.GenerateJwt(user.Id, user.Email, user.Username);
         }
     }
 }

@@ -53,7 +53,7 @@ public static class CreateChat
             await _unitOfWork.Messages.AddAsync(new Message()
             {
                 ChatId = chatId,
-                Text = $"Chat {request.chatName} created",
+                Content = $"Chat {request.chatName} created",
                 SenderId = _userProvider.Id
             });
             

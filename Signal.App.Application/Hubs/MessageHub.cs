@@ -31,7 +31,7 @@ public class MessageHub : Hub
         var msg = new Domain.Entities.Message
         {
             ChatId = chatId,
-            Text = message,
+            Content = message,
             SenderId = Guid.Parse(Context.User.Claims.First(c => c.Type == "Id").Value)
         };
         
