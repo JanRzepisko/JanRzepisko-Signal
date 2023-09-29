@@ -1,11 +1,11 @@
 using MediatR;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Application.Jwt;
+using MultiCultiChat.App.Application.Services;
 using Shared.BaseModels.Exceptions;
 using Shared.Service.Interfaces;
-using Signal.App.Application.DataAccess;
-using Signal.App.Application.Jwt;
-using Signal.App.Application.Services;
 
-namespace Signal.App.Application.Actions.Auth;
+namespace MultiCultiChat.App.Application.Actions.Auth;
 
 public static class RefreshToken
 {

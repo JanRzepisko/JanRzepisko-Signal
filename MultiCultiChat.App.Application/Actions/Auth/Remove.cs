@@ -1,9 +1,9 @@
 using FluentValidation;
 using MediatR;
+using MultiCultiChat.App.Application.DataAccess;
 using Shared.BaseModels.Exceptions;
-using Signal.App.Application.DataAccess;
 
-namespace Signal.App.Application.Actions.Auth;
+namespace MultiCultiChat.App.Application.Actions.Auth;
 
 public static class Remove
 {

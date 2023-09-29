@@ -1,7 +1,6 @@
 using Shared.BaseModels.BaseEntities;
-using Signal.App.Domain.DTOs;
 
-namespace Signal.App.Domain.Entities;
+namespace MultiCultiChat.App.Domain.Entities;
 
 public class User : Entity
 {

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Signal.App.Infrastructure.DataAccess;
+using MultiCultiChat.App.Infrastructure.DataAccess;
 
 #nullable disable
 

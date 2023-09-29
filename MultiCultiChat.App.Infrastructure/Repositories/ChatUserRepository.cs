@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using MultiCultiChat.App.Application.Repository;
+using MultiCultiChat.App.Domain.Entities;
 using Shared.BaseModels.BaseEntities;
-using Signal.App.Application.Repository;
-using Signal.App.Domain.Entities;
 
-namespace Signal.App.Infrastructure.Repositories;
+namespace MultiCultiChat.App.Infrastructure.Repositories;
 
 public class ChatUserRepository : BaseRepository<ChatUser>, IChatUserRepository 
 {

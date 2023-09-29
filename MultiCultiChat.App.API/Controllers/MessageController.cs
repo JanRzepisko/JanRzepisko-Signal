@@ -1,11 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MultiCultiChat.App.Application.Actions.Messages;
 using Shared.BaseModels.ApiControllerModels;
-using Signal.App.Application.Actions.Chat;
-using Signal.App.Application.Actions.Messages;
 
-namespace Signal.App.API.Controllers;
+namespace MultiCultiChat.App.API.Controllers;
 
 [Authorize]
 [ApiController]

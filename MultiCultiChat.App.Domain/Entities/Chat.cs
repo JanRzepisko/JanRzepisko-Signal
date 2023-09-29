@@ -1,6 +1,6 @@
 using Shared.BaseModels.BaseEntities;
 
-namespace Signal.App.Domain.Entities;
+namespace MultiCultiChat.App.Domain.Entities;
 
 public class Chat : Entity
 {

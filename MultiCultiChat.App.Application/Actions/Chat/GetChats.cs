@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using MediatR;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Domain.DTOs;
 using Shared.Service.Interfaces;
-using Signal.App.Application.DataAccess;
-using Signal.App.Domain.DTOs;
 
-namespace Signal.App.Application.Actions.Chat;
+namespace MultiCultiChat.App.Application.Actions.Chat;
 
 public static class GetChats
 {

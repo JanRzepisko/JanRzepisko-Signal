@@ -1,12 +1,14 @@
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Signal.App.Application.Jwt;
-using Signal.App.Application.Services;
+using MultiCultiChat.App.Application.Jwt;
+using MultiCultiChat.App.Application.Services;
 
-namespace Signal.App.Infrastructure.Services;
+namespace MultiCultiChat.App.Infrastructure.Services;
 
 public class JwtAuth : IJwtAuth
 {

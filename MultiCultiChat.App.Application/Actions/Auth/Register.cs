@@ -1,9 +1,9 @@
 using FluentValidation;
 using MediatR;
-using Signal.App.Application.DataAccess;
-using Signal.App.Domain.Entities;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Domain.Entities;
 
-namespace Signal.App.Application.Actions.Auth;
+namespace MultiCultiChat.App.Application.Actions.Auth;
 
 public static class Register
 {

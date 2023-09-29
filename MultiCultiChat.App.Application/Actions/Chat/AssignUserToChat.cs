@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using MediatR;
-using Signal.App.Application.DataAccess;
-using Signal.App.Domain.Entities;
-using Signal.App.Domain.Enums;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Domain.Entities;
+using MultiCultiChat.App.Domain.Enums;
 
-namespace Signal.App.Application.Actions.Chat;
+namespace MultiCultiChat.App.Application.Actions.Chat;
 
 public static class AssignUserToChat
 {

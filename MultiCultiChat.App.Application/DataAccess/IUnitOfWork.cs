@@ -1,8 +1,6 @@
-using Shared.BaseModels.BaseEntities;
-using Signal.App.Application.Repository;
-using Signal.App.Domain.Entities;
+using MultiCultiChat.App.Application.Repository;
 
-namespace Signal.App.Application.DataAccess;
+namespace MultiCultiChat.App.Application.DataAccess;
 
 public interface IUnitOfWork
 {

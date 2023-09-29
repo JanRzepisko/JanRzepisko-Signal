@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Signal.App.Domain.Entities;
+using MultiCultiChat.App.Domain.Entities;
 
-namespace Signal.App.Domain.EntityConfig;
+namespace MultiCultiChat.App.Domain.EntityConfig;
 
 internal sealed class UserConfig : IEntityTypeConfiguration<User>
 {

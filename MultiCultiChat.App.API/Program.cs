@@ -1,5 +1,5 @@
 
-using Signal.App.API;
+using MultiCultiChat.App.API;
 
 CreateHostBuilder(args).Build().Run();
 

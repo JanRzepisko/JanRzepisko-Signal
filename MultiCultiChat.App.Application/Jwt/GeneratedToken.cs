@@ -1,4 +1,4 @@
-namespace Signal.App.Application.Jwt;
+namespace MultiCultiChat.App.Application.Jwt;
 
 public class GeneratedToken
 {

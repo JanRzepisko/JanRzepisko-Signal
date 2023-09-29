@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using Renci.SshNet.Messages;
-using Signal.App.Application.DataAccess;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Domain.Entities;
 
-namespace Signal.App.Application.Hubs;
+namespace MultiCultiChat.App.Application.Hubs;
 
 public class MessageHub : Hub
 {
@@ -28,7 +28,7 @@ public class MessageHub : Hub
     [HubMethodName("SendMessage")]
     public async Task SendMessage(string message, Guid chatId)
     {
-        var msg = new Domain.Entities.Message
+        var msg = new Message
         {
             ChatId = chatId,
             Content = message,

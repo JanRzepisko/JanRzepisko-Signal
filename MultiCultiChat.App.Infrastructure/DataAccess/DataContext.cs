@@ -1,11 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using Shared.BaseModels.BaseEntities;
-using Signal.App.Application.DataAccess;
-using Signal.App.Application.Repository;
-using Signal.App.Domain.Entities;
-using Signal.App.Infrastructure.Repositories;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Application.Repository;
+using MultiCultiChat.App.Domain.Entities;
+using MultiCultiChat.App.Infrastructure.Repositories;
 
-namespace Signal.App.Infrastructure.DataAccess;
+namespace MultiCultiChat.App.Infrastructure.DataAccess;
 
 public class DataContext : DbContext, IUnitOfWork
 {

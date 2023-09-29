@@ -1,3 +1,3 @@
-namespace Signal.App.Application;
+namespace MultiCultiChat.App.Application;
 
 public class AssemblyEntryPoint { }

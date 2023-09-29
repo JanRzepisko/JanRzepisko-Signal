@@ -1,7 +1,7 @@
 
-using Signal.App.Application.Jwt;
+using MultiCultiChat.App.Application.Jwt;
 
-namespace Signal.App.Application.Services;
+namespace MultiCultiChat.App.Application.Services;
 
 public interface IJwtAuth
 {

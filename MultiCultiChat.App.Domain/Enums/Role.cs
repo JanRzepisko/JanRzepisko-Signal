@@ -1,4 +1,4 @@
-namespace Signal.App.Domain.Enums;
+namespace MultiCultiChat.App.Domain.Enums;
 
 public enum Role
 {

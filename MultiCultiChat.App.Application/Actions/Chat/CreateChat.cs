@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using MediatR;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Domain.Entities;
 using Shared.Service.Interfaces;
-using Signal.App.Application.DataAccess;
-using Signal.App.Domain.Entities;
 
-namespace Signal.App.Application.Actions.Chat;
+namespace MultiCultiChat.App.Application.Actions.Chat;
 
 public static class CreateChat
 {

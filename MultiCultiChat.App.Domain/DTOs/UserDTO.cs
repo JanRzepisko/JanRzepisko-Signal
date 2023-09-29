@@ -1,6 +1,6 @@
-using Signal.App.Domain.Entities;
+using MultiCultiChat.App.Domain.Entities;
 
-namespace Signal.App.Domain.DTOs;
+namespace MultiCultiChat.App.Domain.DTOs;
 
 public class UserDTO
 {

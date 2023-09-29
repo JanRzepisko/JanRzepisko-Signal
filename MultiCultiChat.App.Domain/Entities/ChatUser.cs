@@ -1,7 +1,7 @@
+using MultiCultiChat.App.Domain.Enums;
 using Shared.BaseModels.BaseEntities;
-using Signal.App.Domain.Enums;
 
-namespace Signal.App.Domain.Entities;
+namespace MultiCultiChat.App.Domain.Entities;
 
 public class ChatUser : Entity
 {

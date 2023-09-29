@@ -1,14 +1,14 @@
+using MultiCultiChat.App.Application;
+using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Application.Hubs;
+using MultiCultiChat.App.Application.Services;
+using MultiCultiChat.App.Infrastructure.DataAccess;
+using MultiCultiChat.App.Infrastructure.Services;
 using Shared.BaseModels.LoginObject;
 using Shared.Extensions.ConfigureApp;
 using Shared.Extensions.ConfigureServices;
-using Signal.App.Application;
-using Signal.App.Application.DataAccess;
-using Signal.App.Application.Hubs;
-using Signal.App.Application.Services;
-using Signal.App.Infrastructure.DataAccess;
-using Signal.App.Infrastructure.Services;
 
-namespace Signal.App.API;
+namespace MultiCultiChat.App.API;
 
 public class Startup
 {
