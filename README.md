@@ -1,3 +1,2 @@
-# Signal
-Multi Culti Chat
+# Multi Culti Chat
 
