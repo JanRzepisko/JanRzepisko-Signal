@@ -28,7 +28,7 @@ public static class GetMessages
                 throw new Exception("User not found");
 
             var messages = await _unitOfWork.Messages.GetMessagesByChatId(request.ChatId, request.Page, _pageSize);
-
+           
             return messages.Select(MessageDTO.FromEntity).ToList();
         }
 

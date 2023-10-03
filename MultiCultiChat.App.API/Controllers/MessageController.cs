@@ -16,6 +16,6 @@ public class MessageController : BaseApiController
     }
     
     [HttpGet]
-    public Task<IActionResult> RegisterUser(Guid chatId, int page) => Endpoint(new GetMessages.Command(chatId, page));
+    public Task<IActionResult> GetMessages(Guid chatId, int page) => Endpoint(new GetMessages.Command(chatId, page));
     
 }

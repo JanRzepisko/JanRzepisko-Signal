@@ -18,6 +18,6 @@ public class ChatController : BaseApiController
     public Task<IActionResult> CreateChat(CreateChat.Command request) => Endpoint(request);
     
     [HttpGet]
-    public Task<IActionResult> RegisterUser(int page) => Endpoint(new GetChats.Command(page));
+    public Task<IActionResult> GetChats(int page) => Endpoint(new GetChats.Command(page));
     
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using MultiCultiChat.App.Application.DataAccess;
+using MultiCultiChat.App.Domain.DTOs;
 using MultiCultiChat.App.Domain.Entities;
 
 namespace MultiCultiChat.App.Application.Hubs;
@@ -24,20 +25,23 @@ public class MessageHub : Hub
         return Groups.AddToGroupAsync(Context.ConnectionId, chatId.ToString());
     }
     
-    [Authorize]
     [HubMethodName("SendMessage")]
-    public async Task SendMessage(string message, Guid chatId)
+    public async Task SendMessage(string message, Guid chatId, Guid senderId)
     {
+        var sender = await _unitOfWork.Users.GetByIdAsync(senderId);
+        if (sender is null) throw new Exception("User not found");
+
         var msg = new Message
         {
             ChatId = chatId,
             Content = message,
-            SenderId = Guid.Parse(Context.User.Claims.First(c => c.Type == "Id").Value)
+            SenderId = senderId,
+            Sender = sender
         };
         
         await _unitOfWork.Messages.AddAsync(msg);
         await _unitOfWork.SaveChangesAsync();
-        await Clients.Groups(chatId.ToString()).SendAsync("Sent", chatId, message);
+        await Clients.All.SendAsync("Sent", chatId, MessageDTO.FromEntity(msg));
     }
     
     [Authorize]
