@@ -1,27 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{D66CFE6D-290C-4CF2-81DD-99F542895FD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.Infrastructure", "MultiCultiChat.App.Infrastructure\MultiCultiChat.App.Infrastructure.csproj", "{BB914A50-F8A2-4D79-BB73-5B43F2544776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiCultiChat.App.Infrastructure", "MultiCultiChat.App.Infrastructure\MultiCultiChat.App.Infrastructure.csproj", "{BB914A50-F8A2-4D79-BB73-5B43F2544776}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.Domain", "MultiCultiChat.App.Domain\MultiCultiChat.App.Domain.csproj", "{A0F565EF-D9CB-4B62-8715-2ED09308E459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiCultiChat.App.Domain", "MultiCultiChat.App.Domain\MultiCultiChat.App.Domain.csproj", "{A0F565EF-D9CB-4B62-8715-2ED09308E459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.Application", "MultiCultiChat.App.Application\MultiCultiChat.App.Application.csproj", "{4B60CC70-E1AD-4784-A6FD-A6F4954FFA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiCultiChat.App.Application", "MultiCultiChat.App.Application\MultiCultiChat.App.Application.csproj", "{4B60CC70-E1AD-4784-A6FD-A6F4954FFA57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCultiChat.App.API", "MultiCultiChat.App.API\MultiCultiChat.App.API.csproj", "{AB587759-0366-4657-BC3F-B771BC444B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiCultiChat.App.API", "MultiCultiChat.App.API\MultiCultiChat.App.API.csproj", "{AB587759-0366-4657-BC3F-B771BC444B29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{9FA23EBD-0AC1-49EF-91F7-72E749BF9922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{9FA23EBD-0AC1-49EF-91F7-72E749BF9922}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4B11B79E-0724-43B0-AF92-DE0D6F60F296}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{BB914A50-F8A2-4D79-BB73-5B43F2544776} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
-		{A0F565EF-D9CB-4B62-8715-2ED09308E459} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
-		{4B60CC70-E1AD-4784-A6FD-A6F4954FFA57} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
-		{AB587759-0366-4657-BC3F-B771BC444B29} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BB914A50-F8A2-4D79-BB73-5B43F2544776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +43,21 @@ Global
 		{9FA23EBD-0AC1-49EF-91F7-72E749BF9922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA23EBD-0AC1-49EF-91F7-72E749BF9922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA23EBD-0AC1-49EF-91F7-72E749BF9922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B11B79E-0724-43B0-AF92-DE0D6F60F296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B11B79E-0724-43B0-AF92-DE0D6F60F296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B11B79E-0724-43B0-AF92-DE0D6F60F296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B11B79E-0724-43B0-AF92-DE0D6F60F296}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB914A50-F8A2-4D79-BB73-5B43F2544776} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
+		{A0F565EF-D9CB-4B62-8715-2ED09308E459} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
+		{4B60CC70-E1AD-4784-A6FD-A6F4954FFA57} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
+		{AB587759-0366-4657-BC3F-B771BC444B29} = {D66CFE6D-290C-4CF2-81DD-99F542895FD0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2051623E-E682-442A-8B9D-D167CB3D278C}
 	EndGlobalSection
 EndGlobal

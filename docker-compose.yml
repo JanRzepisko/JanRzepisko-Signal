@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  multicultichat.app.api:
+    image: ${DOCKER_REGISTRY-}multicultichatappapi
+    build:
+      context: .
+      dockerfile: MultiCultiChat.App.API/Dockerfile
