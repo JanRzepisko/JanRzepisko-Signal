@@ -49,6 +49,7 @@ public class MessageHub : Hub
             Sender = sender
         };
 
+        
         var chat = await _unitOfWork.Chats.GetByIdAsync(chatId);
         foreach (var chatUser in chat.ChatUsers)
         {
