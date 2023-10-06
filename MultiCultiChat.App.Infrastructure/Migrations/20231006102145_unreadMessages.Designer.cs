@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MultiCultiChat.App.Infrastructure.DataAccess;
 
@@ -10,9 +11,11 @@ using MultiCultiChat.App.Infrastructure.DataAccess;
 namespace Signal.App.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231006102145_unreadMessages")]
+    partial class unreadMessages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,16 +93,13 @@ namespace Signal.App.Infrastructure.Migrations
                     b.ToTable("_messages");
                 });
 
-            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.UnreadChat", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.UnreadMessage", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid>("ChatId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid?>("MessageId")
+                    b.Property<Guid>("MessageId")
                         .HasColumnType("char(36)");
 
                     b.Property<Guid>("UserId")
@@ -107,13 +107,11 @@ namespace Signal.App.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ChatId");
-
                     b.HasIndex("MessageId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UnreadChat");
+                    b.ToTable("UnreadMessage");
                 });
 
             modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.User", b =>
@@ -181,17 +179,13 @@ namespace Signal.App.Infrastructure.Migrations
                     b.Navigation("Sender");
                 });
 
-            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.UnreadChat", b =>
+            modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.UnreadMessage", b =>
                 {
-                    b.HasOne("MultiCultiChat.App.Domain.Entities.Chat", "Chat")
+                    b.HasOne("MultiCultiChat.App.Domain.Entities.Message", "Message")
                         .WithMany("UnreadMessages")
-                        .HasForeignKey("ChatId")
+                        .HasForeignKey("MessageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("MultiCultiChat.App.Domain.Entities.Message", null)
-                        .WithMany("UnreadMessages")
-                        .HasForeignKey("MessageId");
 
                     b.HasOne("MultiCultiChat.App.Domain.Entities.User", "User")
                         .WithMany("UnreadMessages")
@@ -199,7 +193,7 @@ namespace Signal.App.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Chat");
+                    b.Navigation("Message");
 
                     b.Navigation("User");
                 });
@@ -209,8 +203,6 @@ namespace Signal.App.Infrastructure.Migrations
                     b.Navigation("ChatUsers");
 
                     b.Navigation("Messages");
-
-                    b.Navigation("UnreadMessages");
                 });
 
             modelBuilder.Entity("MultiCultiChat.App.Domain.Entities.Message", b =>

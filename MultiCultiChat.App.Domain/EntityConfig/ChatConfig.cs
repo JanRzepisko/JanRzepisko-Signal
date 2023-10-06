@@ -14,5 +14,10 @@ public class ChatConfig : IEntityTypeConfiguration<Chat>
             .WithOne(c => c.Chat)
             .HasForeignKey(c => c.ChatId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasMany(c => c.UnreadMessages)
+            .WithOne(c => c.Chat)
+            .HasForeignKey(c => c.ChatId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

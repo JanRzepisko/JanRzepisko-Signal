@@ -19,5 +19,10 @@ internal sealed class UserConfig : IEntityTypeConfiguration<User>
             .WithOne(c => c.Sender)
             .HasForeignKey(c => c.SenderId)
             .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasMany(c => c.UnreadMessages)
+            .WithOne(c => c.User)
+            .HasForeignKey(c => c.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

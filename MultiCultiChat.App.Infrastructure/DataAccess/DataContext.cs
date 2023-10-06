@@ -12,6 +12,7 @@ public class DataContext : DbContext, IUnitOfWork
     private DbSet<Chat> _chats { get; set; }
     private DbSet<Message> _messages { get; set; }
     private DbSet<ChatUser> _chatUsers { get; set; }
+    private DbSet<UnreadChat> _unreadChats { get; set; }
     
     public DataContext(DbContextOptions<DataContext> options) : base(options)
     {
@@ -27,4 +28,5 @@ public class DataContext : DbContext, IUnitOfWork
     public IChatRepository Chats => new ChatRepository(_chats);
     public IMessageRepository Messages => new MessagesRepository(_messages);
     public IChatUserRepository ChatUsers => new ChatUserRepository(_chatUsers);
+    public IUnreadChatRepository UnreadChat => new UnreadChatRepository(_unreadChats);
 }

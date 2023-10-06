@@ -9,4 +9,6 @@ public class Message : Entity
     public Guid ChatId { get; set; }
     public Chat Chat { get; set; }
     public string Content { get; set; }
+    public DateTime SentDate { get; set; }
+    public ICollection<UnreadChat> UnreadMessages { get; set; }
 }

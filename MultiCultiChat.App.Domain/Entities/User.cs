@@ -10,4 +10,5 @@ public class User : Entity
    public string PhotoPath { get; set; }
    public ICollection<ChatUser> ChatUsers { get; set; }
    public ICollection<Message> Messages { get; set; }
+   public ICollection<UnreadChat> UnreadMessages { get; set; }
 }

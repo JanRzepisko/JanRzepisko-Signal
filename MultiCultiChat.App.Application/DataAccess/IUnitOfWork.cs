@@ -9,5 +9,6 @@ public interface IUnitOfWork
     IChatRepository Chats { get; }
     IMessageRepository Messages { get; }
     IChatUserRepository ChatUsers { get; }
+    IUnreadChatRepository UnreadChat { get; }
     
 }
